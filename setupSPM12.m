@@ -12,13 +12,14 @@ function setupSPM12(spm12Path)
         fprintf('Adding SPM12 to MATLAB path: %s\n', spm12Path);
         addpath(spm12Path);
         
-        % Initialize SPM12
-        try
-            spm('defaults', 'fmri');
-            fprintf('SPM12 initialized successfully\n');
-        catch ME
-            warning('Failed to initialize SPM12: %s', ME.message);
-        end
+        % % Initialize SPM12
+        % try
+        %     spm('defaults', 'fmri');
+        %     fprintf('   SPM12 initialized successfully\n');
+        % catch ME
+        %     % warning('Failed to initialize SPM12: %s', ME.message);
+        %     warning(ME.identifier, 'Failed to initialize SPM12: %s', ME.message);
+        % end
     else
         fprintf('SPM12 already available on path\n');
     end

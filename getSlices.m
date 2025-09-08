@@ -1,4 +1,5 @@
 function getSlices(imPath, maskPath, outF)
+    set(0, 'DefaultFigureVisible', 'off');
     [~, caseNum, ~] = fileparts(imPath);
     image = niftiread(imPath);
     mask = niftiread(maskPath);
@@ -22,7 +23,7 @@ function getSlices(imPath, maskPath, outF)
             if sum(sum(rot)) > 0
                 h1 = figure;
                 figuresToClose(end+1) = h1;
-                imshow(rotcor, [])
+                imshow(rotcor, []);
                 corners = pgonCorners(rot, 4, 360);
                 
                 if size(corners) ~= [4,4]
@@ -31,7 +32,7 @@ function getSlices(imPath, maskPath, outF)
                     % Original Coordinates (Before Angulation)
                     h2 = figure;
                     figuresToClose(end+1) = h2;
-                    imshow(rot, [])
+                    imshow(rot, []);
                     hold on
                     plot(corners(:,2), corners(:,1), 'yo', 'MarkerFaceColor', 'r', ...
                          'MarkerSize', 12, 'LineWidth', 2);
@@ -57,7 +58,7 @@ function getSlices(imPath, maskPath, outF)
                     rotated_mask = imrotate(rot, slope);
                     h4 = figure;
                     figuresToClose(end+1) = h4;
-                    imshow(rotated_mask, [])
+                    imshow(rotated_mask, []);
                     [new_r, new_c] = size(rotated_mask);
                     rotated_image = imrotate(rotcor, slope);
                     rotated_image = imresize(rotated_image, [new_r new_c]);

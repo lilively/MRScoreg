@@ -2,18 +2,15 @@ function matches = findDicomMatches(mriFiles, mriMetadata, mrsFiles, mrsMetadata
     matches = {};
     matchCount = 0;
     
-    
     % Validate inputs
     if isempty(mriFiles) || isempty(mrsFiles)
         warning('Empty file lists provided');
         return;
     end
-    
     if isempty(mriMetadata)
         warning('No MRI metadata available. Please load MRI files first.');
         return;
     end
-    
     if isempty(mrsMetadata)
         warning('No MRS metadata available. Please load MRS files first.');
         return;
@@ -26,8 +23,9 @@ function matches = findDicomMatches(mriFiles, mriMetadata, mrsFiles, mrsMetadata
     % Both metadata sets are now available from app properties - no need to read files again!
     fprintf('Using pre-loaded metadata for both MRI and MRS files...\n');
     
-    % Find matches based on filename similarity AND study date
-    fprintf('Matching files based on filename and study date...\n');
+    % Find matches based on StudyInstanceUID only
+    fprintf('Matching files based on StudyInstanceUID ...\n');
+    
     for i = 1:length(mriMetadata)
         if isempty(mriMetadata{i})
             continue;
@@ -38,23 +36,21 @@ function matches = findDicomMatches(mriFiles, mriMetadata, mrsFiles, mrsMetadata
         fprintf('Looking for match for MRI: %s\n', mriFileName);
         
         bestMatch = -1;
+        
         for j = 1:length(mrsMetadata)
             if isempty(mrsMetadata{j})
                 continue;
             end
             
-            mrsFileName = getFileName(mrsFiles{j});
-            
-            % Check if filenames are similar (same case number, etc.)
-            if areFileNamesSimilar(mriFileName, mrsFileName)
-                % Verify with study date
-                if isSameInstanceCreationDate(mriMetadata{i}, mrsMetadata{j})
-                    fprintf(' InstanceCreationDate match - confirmed!\n');
-                    bestMatch = j;
-                    break;
-                else
-                    fprintf(' InstanceCreationDates do not match - skipping\n');
-                end
+            % Check StudyInstanceUID only
+            if isSameStudyInstanceUID(mriMetadata{i}, mrsMetadata{j})
+                fprintf(' StudyInstanceUID match - confirmed!\n');
+                bestMatch = j;
+                break;
+            else
+                % fprintf(' StudyInstanceUIDs do not match - skipping\n');
+                [~, filename, ext] = fileparts(mrsFiles{j});
+                fprintf(' StudyInstanceUIDs do not match - skipping %s\n', filename);
             end
         end
         
@@ -69,6 +65,6 @@ function matches = findDicomMatches(mriFiles, mriMetadata, mrsFiles, mrsMetadata
         end
     end
     
-    % fprintf('%s\n', repmat('-', 1, 30));
-    % fprintf('Found %d matching pairs\n', matchCount);
+    fprintf('%s\n', repmat('-', 1, 30));
+    fprintf('Found %d matching pairs\n', matchCount);
 end
