@@ -1,5 +1,5 @@
 %NEW
-function maskPath= createMask (dicompath,nii_file,outF)
+function maskPath= createMask (dicompath,fName_IM,nii_file,outF)
     nii_file = convertStringsToChars(nii_file);
     [~, fName, ~] = fileparts(dicompath);
     mg = dicominfo(dicompath);
@@ -175,8 +175,7 @@ function maskPath= createMask (dicompath,nii_file,outF)
     mask = reshape(mask, V.dim);
     
     f=size(mask);
-     
-    maskPath = fullfile(outF,strcat(fName, '-mask.nii'));
+    maskPath = fullfile(outF,strcat(fName_IM, '-mask.nii'));
     maskPath = convertStringsToChars(maskPath);
     
     % V_mask.fname='C:\Users\Lili\Dropbox\Phd\3.FIS-MRS-ML\Images\ITKsnap\220317-1-mask.nii';

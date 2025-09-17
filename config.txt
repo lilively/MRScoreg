@@ -1,11 +1,13 @@
-# Configuration
-# 
+# Configuration File
+#
 # Instructions:
-# 1. Change the path below to point to your algorithm folder
-# 2. Use forward slashes (/) or double backslashes (\\) 
+# 1. Change the paths below to point to your installations
+# 2. Use forward slashes (/) or double backslashes (\\)
 # 3. Save this file and restart the application
 #
-# Example: AlgorithmPath=C:/MyAlgorithms/Production
+# Examples:
+# ITK=C:/ITK-SNAP 3.8/bin/c3d.exe
+# SPM12=C:/Users/username/Desktop/spm12
 #
 ITK=C:\ITK-SNAP 3.8\bin\c3d.exe
-SPM12=C:\Users\lilif\OneDrive\Desktop\spm12
+SPM12=C:\Users\username\Desktop\spm12

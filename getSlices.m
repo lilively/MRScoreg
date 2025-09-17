@@ -51,9 +51,9 @@ function getSlices(imPath, maskPath, outF)
                     slope_pt4 = corners(4,2);
                     slope = atand((slope_pt1-slope_pt2)/(slope_pt3-slope_pt4));
 
-                    if abs(slope) > 2
-                        fprintf('TILTED: Slice %d, Case %s, Angle: %.1f°\n', i, caseNum, slope);
-                    end
+                    % if abs(slope) > 2
+                    %     fprintf('TILTED: Slice %d, Case %s, Angle: %.1f°\n', i, caseNum, slope);
+                    % end
                     
                     rotated_mask = imrotate(rot, slope);
                     h4 = figure;
