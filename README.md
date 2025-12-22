@@ -1,7 +1,7 @@
 
 [![DOI](https://img.shields.io/badge/DOI-1https://doi.org/XXXX-C00000?style=for-the-badge)](https://doi.org/10.5281/zenodo.17987686)  [![License: CC BY-NC-ND 4.0 Plus](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0_Plus-C00000?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0)
 
-<h1><img src="MRScoregIcon5.png" alt="MRScoreg logo" width="50" style="vertical-align: middle;"> MRSPlotter</h1>
+<h1><img src="MRScoregIcon5.png" alt="MRScoreg logo" width="50" style="vertical-align: middle;"> MRScoreg</h1>
 
 # Overview
 
