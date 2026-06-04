@@ -239,7 +239,7 @@ for caseIdx = 1:length(uniqueCases)
             hm = pcolor(xg,yg,color);
             hm.FaceColor = 'none';
             hm.EdgeColor = GridColor;
-            hm.LineWidth = 2;
+            hm.LineWidth = 1;
             hm.LineStyle ="-";
         end
 
