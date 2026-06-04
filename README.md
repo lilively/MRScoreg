@@ -5,7 +5,7 @@
 # Overview
 
 MRScoreg is a user-friendly software tool designed to facilitate the integration of magnetic resonance spectroscopy (MRS) data with magnetic resonance imaging (MRI). Spatial parameters are extracted from DICOM headers, and a sequence of processing steps generates anatomical image regions corresponding to each voxel.
-Full software documentation can be found [here](MRScoreg%20Instructions.pdf).
+Full software documentation can be found [here](MRScoreg_instructions.pdf).
 
 ## Windows Installation
 
