@@ -1,5 +1,5 @@
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.18185759-C00000?style=for-the-badge)](https://doi.org/10.5281/zenodo.18185759)
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.20662959?style=for-the-badge)](https://doi.org/10.5281/zenodo.18185759)
 <h1><img src="MRScoregIcon5.png" alt="MRScoreg logo" width="50" style="vertical-align: middle;"> MRScoreg</h1>
 
 # Overview
