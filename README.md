@@ -11,7 +11,7 @@ Full software documentation can be found [here](MRScoreg_instructions.pdf).
 
 After downloading the latest version from the GitHub releases page, extract the contents and start the application by double-clicking on the `MRScoreg.exe`. The MATLAB Runtime 2025a will be automatically retrieved during the installation process if it is not detected in the system. This component is available free of charge and does not require a MATLAB license. Other setup instructions can be found in the included [MRScoreg Instructions.pdf](MRScoreg_instructions.pdf). 
 
-The neccesary MATLAB Runtime version can also be downloaded and installed manually from the [MathWorks website](https://www.mathworks.com/products/compiler/matlab-runtime.html).
+The MATLAB Runtime version can also be downloaded and installed manually from the [MathWorks website](https://www.mathworks.com/products/compiler/matlab-runtime.html).
 
 SPM12 is required for some processing steps. The files are included in the download, but if you wish to update or replace them, you can obtain the latest version from the [SPM website](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/).
 
